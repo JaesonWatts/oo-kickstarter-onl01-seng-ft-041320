@@ -1,6 +1,7 @@
 require "pry"
 class Project
 
+  attr_accessor :backed_projects
   attr_reader :title, :backers
 
   def initialize(title)
@@ -10,6 +11,7 @@ class Project
 
   def add_backer(backer)
     @backers << backer
+    backer.back_projects << self
   end
 
 end
